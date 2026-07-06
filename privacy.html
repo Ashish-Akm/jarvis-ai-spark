@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - J.A.R.V.I.S. AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a16;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        h1, h2, h3 {
+            color: #00ffff;
+        }
+        h1 {
+            border-bottom: 2px solid #00ffff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .disclosure {
+            border-left: 4px solid #ffcc00;
+            padding-left: 15px;
+            background-color: rgba(255, 204, 0, 0.05);
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+        <h1>Privacy & Data Policy</h1>
+        <p><strong>Effective Date: July 6, 2026</strong></p>
+        <p>J.A.R.V.I.S. is a fully self-hosted, local-first AI Desktop Assistant. This policy explains what data is accessed, how it is processed, and where it is stored. Because J.A.R.V.I.S. runs entirely on your local machine, <strong>your data remains under your absolute control</strong>. No personal data is collected, stored, or processed on external servers owned by the developer.</p>
+
+        <div class="disclosure">
+            <h3>Google API Limited Use Policy</h3>
+            <p>J.A.R.V.I.S. AI's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy#key-terms" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements. Your Google user data is strictly read and written locally via direct API calls from your computer, and is never shared, transferred, or sold to third parties or LLM models.</p>
+        </div>
+
+        <h2>1. Local Storage & Databases</h2>
+        <p>All configurations, state history, and settings are kept locally on your personal computer. The application uses the following files inside your installation folder:</p>
+        <ul>
+            <li><strong>SQLite Databases:</strong> Stores local reminders, Telegram bot state records, and system settings.</li>
+            <li><strong>token.json:</strong> Stores the encrypted local Google OAuth authorization tokens.</li>
+            <li><strong>.env file:</strong> Stores your own API keys (e.g., Groq, OpenAI, Cohere).</li>
+        </ul>
+        <p><em>These files are never synchronized or uploaded to any developer-managed server.</em></p>
+
+        <h2>2. Data Accessed via Google Workspace APIs</h2>
+        <p>J.A.R.V.I.S. integrates with your personal Google Workspace account to execute your voice/text commands. Here is what we access:</p>
+        <ul>
+            <li><strong>Gmail API:</strong> Reads subject lines/emails to announce notifications or mark them read.</li>
+            <li><strong>Google Calendar:</strong> Reads/Writes events to manage your schedule.</li>
+            <li><strong>Google Tasks:</strong> Reads/Creates tasks for checklists.</li>
+            <li><strong>Google Drive:</strong> Uploads and syncs settings backups to your personal Drive space.</li>
+            <li><strong>YouTube API:</strong> Adds songs to your playlist.</li>
+        </ul>
+        <p><em>All Google tokens and raw contents remain local in the RAM/Disk of your computer.</em></p>
+
+        <h2>3. Hardware Access</h2>
+        <ul>
+            <li><strong>Microphone:</strong> Used for audio commands. Audio processing happens in-memory and is immediately discarded.</li>
+            <li><strong>Camera:</strong> Used for real-time object detection locally. Video feeds are never stored or broadcast.</li>
+        </ul>
+
+        <h2>4. Data Deletion & Consent Revocation</h2>
+        <p>You can revoke access anytime by deleting <code>token.json</code> from the application folder or visiting your <a href="https://myaccount.google.com/permissions" target="_blank">Google Security Dashboard</a> to remove permissions.</p>
+    </main>
+</body>
+</html>
