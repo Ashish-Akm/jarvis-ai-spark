@@ -3,111 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J.A.R.V.I.S. AI - Universal Cognitive OS & Desktop Assistant</title>
+    
+    <!-- Google Site Verification Token -->
+    <meta name="google-site-verification" content="lX-0I4wp7i0NH_Zcmu0tQubQMnSCbEw3SuCh1zxwVq8" />
+
+    <title>Jarvis Assistant - Universal Cognitive OS & Desktop Assistant</title>
+    
+    <!-- Futuristic and clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg-color: #020208;
+            --panel-bg: rgba(6, 6, 20, 0.7);
+            --border-glow: rgba(0, 242, 254, 0.4);
+            --accent-cyan: #00f2fe;
+            --accent-purple: #9b51e0;
+            --accent-blue: #4facfe;
+            --text-primary: #f0f3f8;
+            --text-secondary: #8b9bb4;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a16;
-            color: #c9d1d9;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(155, 81, 224, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
         }
+
         header {
-            background: linear-gradient(135deg, #05050f, #0c0c1e);
-            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(3, 3, 10, 0.95) 0%, rgba(2, 2, 8, 0.9) 100%);
+            padding: 90px 20px 70px 20px;
             text-align: center;
-            border-bottom: 1px solid #00ffff;
+            border-bottom: 1px solid rgba(0, 242, 254, 0.15);
+            position: relative;
+            overflow: hidden;
         }
+
+        /* Sci-Fi glowing grid background overlay */
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        header .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
         h1 {
-            color: #00ffff;
-            font-size: 3rem;
+            font-family: 'Orbitron', sans-serif;
+            color: #ffffff;
+            font-size: 3.5rem;
             margin: 0;
-            letter-spacing: 2px;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 70%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.25));
         }
+
         .subtitle {
-            color: #64ffda;
-            font-size: 1.2rem;
-            margin-top: 10px;
+            color: var(--accent-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            margin-top: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.95;
+            text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
         }
+
         main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
+
         .card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 30px;
+            background: var(--panel-bg);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+
+        .card:hover {
+            border-color: var(--border-glow);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(0, 242, 254, 0.02);
+            transform: translateY(-3px);
+        }
+
         h2 {
-            color: #00ffff;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 8px;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 1.45rem;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
         }
+
+        h2::before {
+            content: '>';
+            margin-right: 10px;
+            color: var(--accent-purple);
+            font-weight: 900;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
         .disclosure {
-            border-left: 4px solid #ffcc00;
-            padding-left: 15px;
-            font-style: italic;
-            color: #e2e8f0;
-            background-color: rgba(255, 204, 0, 0.05);
-            padding: 15px;
-            border-radius: 4px;
+            border-left: 4px solid var(--accent-cyan);
+            background: linear-gradient(90deg, rgba(0, 242, 254, 0.04) 0%, transparent 100%);
+            padding: 24px;
+            border-radius: 0 12px 12px 0;
         }
+
+        .disclosure p {
+            color: #d1f4ff;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li strong {
+            color: var(--text-primary);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            width: 220px;
+            flex-shrink: 0;
+            letter-spacing: 1px;
+        }
+
         footer {
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #30363d;
-            font-size: 0.9rem;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(2, 2, 6, 0.95);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 2;
         }
+
         a {
-            color: #00ffff;
+            color: var(--accent-cyan);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
+
         a:hover {
-            text-decoration: underline;
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--accent-cyan);
         }
+
         .btn-links {
-            margin-top: 20px;
+            margin-top: 30px;
         }
+
         .btn-links a {
             display: inline-block;
-            margin: 0 15px;
-            font-weight: bold;
+            margin: 0 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>J.A.R.V.I.S. AI</h1>
-        <p class="subtitle">Universal Cognitive OS & Core Accelerator</p>
+        <div class="content-wrapper">
+            <h1>Jarvis Assistant</h1>
+            <p class="subtitle">Universal Cognitive OS & Desktop Assistant</p>
+        </div>
     </header>
     <main>
         <section class="card">
-            <h2>About J.A.R.V.I.S. AI</h2>
-            <p>J.A.R.V.I.S. is a fully self-hosted, local-first AI Desktop Assistant that automates tasks, manages workflows, and integrates seamlessly with local OS APIs, hardware sensors, and cloud services (like Google Workspace) to increase your personal productivity.</p>
+            <h2>System Overview</h2>
+            <p>Jarvis Assistant is a fully self-hosted, local-first AI Desktop Assistant that automates tasks, manages workflows, and integrates seamlessly with local OS APIs, hardware sensors, and cloud services (like Google Workspace) to increase your personal productivity.</p>
         </section>
 
         <section class="card">
             <h2>Google API Limited Use Disclosure</h2>
             <div class="disclosure">
-                <p><strong>Google API Disclosure:</strong> Jarvis AI's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy#key-terms" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+                <p><strong>Google API Disclosure:</strong> Jarvis Assistant's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy#key-terms" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
             </div>
         </section>
 
         <section class="card">
-            <h2>Key Features</h2>
+            <h2>Key Capabilities</h2>
             <ul>
-                <li><strong>Local-First:</strong> All models, local database config, and speech recognitions execute locally.</li>
-                <li><strong>Workspace Automation:</strong> Fetch agendas, add calendar logs, coordinate tasks, and search emails directly via voice commands.</li>
-                <li><strong>Hardware Telemetry:</strong> Live Mac/Windows sensors check (temperature, battery, lid monitoring).</li>
+                <li><strong>LOCAL-FIRST ENGINE:</strong> All models, local database config, and speech recognitions execute locally.</li>
+                <li><strong>WORKSPACE INTEGRATION:</strong> Fetch agendas, add calendar logs, coordinate tasks, and search emails directly via voice commands.</li>
+                <li><strong>TELEMETRY & CONTROLS:</strong> Live Mac/Windows sensors check (temperature, battery, lid monitoring).</li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 J.A.R.V.I.S. AI. All rights reserved.</p>
+        <p>&copy; 2026 Jarvis Assistant. All rights reserved.</p>
         <div class="btn-links">
             <a href="privacy.html">Privacy Policy</a> | 
             <a href="terms.html">Terms of Service</a>
