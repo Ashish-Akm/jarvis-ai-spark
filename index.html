@@ -9,145 +9,81 @@
 
     <title>Jarvis Assistant - Universal Cognitive OS & Desktop Assistant</title>
     
-    <!-- Futuristic and clean typography -->
+    <!-- Modern clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --bg-color: #020208;
-            --panel-bg: rgba(6, 6, 20, 0.7);
-            --border-glow: rgba(0, 242, 254, 0.4);
-            --accent-cyan: #00f2fe;
-            --accent-purple: #9b51e0;
-            --accent-blue: #4facfe;
-            --text-primary: #f0f3f8;
-            --text-secondary: #8b9bb4;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: #03030c;
+            color: #f0f3f8;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(155, 81, 224, 0.06) 0%, transparent 40%);
-            background-attachment: fixed;
         }
 
         header {
-            background: linear-gradient(180deg, rgba(3, 3, 10, 0.95) 0%, rgba(2, 2, 8, 0.9) 100%);
-            padding: 90px 20px 70px 20px;
+            background-color: #060614;
+            padding: 80px 20px 60px 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(0, 242, 254, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Sci-Fi glowing grid background overlay */
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        header .content-wrapper {
-            position: relative;
-            z-index: 2;
+            border-bottom: 2px solid #00f2fe;
         }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
             color: #ffffff;
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0;
             font-weight: 900;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 70%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.25));
         }
 
         .subtitle {
-            color: var(--accent-cyan);
+            color: #00f2fe;
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin-top: 15px;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            opacity: 0.95;
-            text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
         }
 
         main {
-            max-width: 850px;
-            margin: 50px auto;
+            max-width: 800px;
+            margin: 40px auto;
             padding: 0 20px;
-            position: relative;
-            z-index: 2;
         }
 
         .card {
-            background: var(--panel-bg);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 16px;
-            padding: 35px;
-            margin-bottom: 35px;
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .card:hover {
-            border-color: var(--border-glow);
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(0, 242, 254, 0.02);
-            transform: translateY(-3px);
+            background-color: #0b0b1e;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
         }
 
         h2 {
             font-family: 'Orbitron', sans-serif;
-            color: var(--accent-cyan);
-            font-size: 1.45rem;
+            color: #00f2fe;
+            font-size: 1.3rem;
             margin-top: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 12px;
-            letter-spacing: 1.5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::before {
-            content: '>';
-            margin-right: 10px;
-            color: var(--accent-purple);
-            font-weight: 900;
         }
 
         p {
-            color: var(--text-secondary);
+            color: #8b9bb4;
             font-size: 1.05rem;
-            font-weight: 400;
         }
 
         .disclosure {
-            border-left: 4px solid var(--accent-cyan);
-            background: linear-gradient(90deg, rgba(0, 242, 254, 0.04) 0%, transparent 100%);
-            padding: 24px;
-            border-radius: 0 12px 12px 0;
+            border-left: 4px solid #00f2fe;
+            background-color: rgba(0, 242, 254, 0.03);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
         }
 
         .disclosure p {
@@ -163,11 +99,9 @@
         }
 
         li {
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: var(--text-secondary);
-            display: flex;
-            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: #8b9bb4;
         }
 
         li:last-child {
@@ -175,45 +109,41 @@
         }
 
         li strong {
-            color: var(--text-primary);
+            color: #f0f3f8;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            display: inline-block;
             width: 220px;
-            flex-shrink: 0;
             letter-spacing: 1px;
         }
 
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(2, 2, 6, 0.95);
+            background-color: #020206;
             font-size: 0.95rem;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 2;
+            color: #8b9bb4;
         }
 
         a {
-            color: var(--accent-cyan);
+            color: #00f2fe;
             text-decoration: none;
-            transition: all 0.3s ease;
         }
 
         a:hover {
             color: #ffffff;
-            text-shadow: 0 0 10px var(--accent-cyan);
         }
 
         .btn-links {
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .btn-links a {
             display: inline-block;
-            margin: 0 18px;
+            margin: 0 15px;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             font-size: 0.8rem;
         }
@@ -221,10 +151,8 @@
 </head>
 <body>
     <header>
-        <div class="content-wrapper">
-            <h1>Jarvis Assistant</h1>
-            <p class="subtitle">Universal Cognitive OS & Desktop Assistant</p>
-        </div>
+        <h1>Jarvis Assistant</h1>
+        <p class="subtitle">Universal Cognitive OS &amp; Desktop Assistant</p>
     </header>
     <main>
         <section class="card">
@@ -244,7 +172,7 @@
             <ul>
                 <li><strong>LOCAL-FIRST ENGINE:</strong> All models, local database config, and speech recognitions execute locally.</li>
                 <li><strong>WORKSPACE INTEGRATION:</strong> Fetch agendas, add calendar logs, coordinate tasks, and search emails directly via voice commands.</li>
-                <li><strong>TELEMETRY & CONTROLS:</strong> Live Mac/Windows sensors check (temperature, battery, lid monitoring).</li>
+                <li><strong>TELEMETRY &amp; CONTROLS:</strong> Live Mac/Windows sensors check (temperature, battery, lid monitoring).</li>
             </ul>
         </section>
     </main>
